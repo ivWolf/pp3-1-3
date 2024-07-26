@@ -34,10 +34,6 @@ public class User implements UserDetails {
     @Column(name = "surname")
     private String surname;
 
-    @Column(name = "age")
-    @Positive
-    private byte age;
-
     @NotBlank
     @Column(name = "email", unique = true)
     private String email;
@@ -56,10 +52,9 @@ public class User implements UserDetails {
     public User() {
     }
 
-    public User(String name, String surname, byte age, String email, String password, Collection<Role> roles) {
+    public User(String name, String surname, String email, String password, Collection<Role> roles) {
         this.name = name;
         this.surname = surname;
-        this.age = age;
         this.email = email;
         this.password = password;
         this.roles = roles;
